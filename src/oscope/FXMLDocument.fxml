@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="507.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oscope.FXMLDocumentController">
+   <children>
+      <LineChart fx:id="Display" createSymbols="false" layoutX="159.0" layoutY="57.0" legendVisible="false" prefHeight="332.0" prefWidth="414.0">
+        <xAxis>
+          <NumberAxis autoRanging="false" lowerBound="-1.0" minorTickVisible="false" side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="false" upperBound="1.0" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" autoRanging="false" lowerBound="-1.0" minorTickVisible="false" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" upperBound="1.0" />
+        </yAxis>
+      </LineChart>
+      <HBox layoutX="261.0" layoutY="8.0" prefHeight="25.0" prefWidth="217.0">
+         <children>
+            <Button fx:id="SineButton" mnemonicParsing="false" onAction="#handleSineButtonAction" text="Sine" />
+            <Button fx:id="SquareButton" mnemonicParsing="false" onAction="#handleSquareButtonAction" text="Square" />
+            <Button fx:id="SawtoothButton" mnemonicParsing="false" onAction="#handleSawtoothButtonAction" text="Sawtooth" />
+            <Button fx:id="TriangleButton" mnemonicParsing="false" onAction="#handleTriangleButtonAction" text="Triangle" />
+         </children>
+      </HBox>
+      <Slider fx:id="AmplitudeSlider" layoutX="534.0" layoutY="26.0" showTickMarks="true" />
+      <Label layoutX="534.0" layoutY="6.0" text="Amplitude" />
+      <VBox layoutX="8.0" layoutY="8.0" prefHeight="200.0" prefWidth="140.0">
+         <children>
+            <Label text="Frequency" />
+            <Slider fx:id="FrequencySlider" blockIncrement="1.0" majorTickUnit="100.0" max="1000.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
+            <Label text="Multiplier" />
+            <ComboBox fx:id="MultiplierBox" prefWidth="150.0" />
+            <Label fx:id="freqValue" text="" />
+         </children>
+      </VBox>
+      <Pane layoutX="177.0" layoutY="374.0" prefHeight="119.0" prefWidth="382.0">
+         <children>
+            <Label layoutX="52.0" layoutY="15.0" text="Volt/Div" />
+            <Label layoutX="255.0" layoutY="15.0" text="Time/Div" />
+            <VBox layoutX="60.0" layoutY="35.0" prefHeight="50.0" prefWidth="27.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" text="Button" />
+               </children>
+            </VBox>
+            <HBox layoutX="251.0" layoutY="48.0" prefHeight="25.0" prefWidth="55.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
